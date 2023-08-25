@@ -1,4 +1,7 @@
-import { openConnection, closeConnection } from "./db";
+const { openConnection } = require("./db");
+const { closeConnection } = require("./db");
+const Goods = require("./models/goodsModel");
+const Receipt = require("./models/receiptModel");
 
 const bootstrap = async () => {
   try {
@@ -12,4 +15,16 @@ const bootstrap = async () => {
   }
 };
 
+const qwe = async () => {
+  const jane = await Receipt.sync();
+  console.log(jane);
+  // console.log(JSON.stringify(jane, null, 2));
+};
+
+qwe();
+
 bootstrap();
+
+// Goods.sync()
+//   .then((result) => console.log(result))
+//   .catch((err) => console.log(err));
