@@ -11,17 +11,19 @@ const bootstrap = async () => {
 
     await closeConnection();
   } catch (error) {
+    console.log(123);
     console.log(error);
   }
 };
 
 const qwe = async () => {
-  const jane = await Receipt.sync();
-  console.log(jane);
-  // console.log(JSON.stringify(jane, null, 2));
+  const jane = await Receipt.create();
+  console.log(111);
+  console.log(jane.toJSON());
+  console.log(JSON.stringify(jane, null, 2));
 };
 
-qwe();
+// qwe();
 
 bootstrap();
 
